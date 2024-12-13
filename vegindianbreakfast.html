@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Indian Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/indianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(79, 176, 0);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(79, 176, 0);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Indian Breakfast</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/poha.jpeg" alt="Poha">
+            <h3>Poha</h3>
+            <p>Ingredients: Flattened Rice, Mustard Seeds, Turmeric, Coriander</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Poha')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=poha+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A simple, quick, and healthy breakfast made with flattened rice, mustard seeds, and turmeric, garnished with fresh coriander and lime.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/aloo paratha.jpeg" alt="Aloo Paratha">
+            <h3>Aloo Paratha</h3>
+            <p>Ingredients: Wheat Flour, Potatoes, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Aloo Paratha')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=aloo+paratha+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A popular North Indian dish made of soft, flaky flatbread stuffed with spiced mashed potatoes, best enjoyed with yogurt and tangy pickle.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/upma.jpeg" alt="Upma">
+            <h3>Upma</h3>
+            <p>Ingredients: Semolina, Curry Leaves, Vegetables</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Upma')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=upma+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A savory and aromatic dish made with roasted semolina, sautéed vegetables, and seasoned with mustard seeds and curry leaves.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/idli.jpeg" alt="Idli">
+            <h3>Idli</h3>
+            <p>Ingredients: Rice, Urad Dal, Fenugreek Seeds</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Idli')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=idli+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Soft, fluffy rice cakes steamed to perfection, served with coconut chutney and spicy sambar for a complete breakfast.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/dosa.jpeg" alt="Dosa">
+            <h3>Dosa</h3>
+            <p>Ingredients: Rice, Urad Dal, Fenugreek Seeds</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Dosa')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=dosa+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Crispy, golden-brown crepes made from fermented rice and lentil batter, served with chutney and sambar on the side.</div>
+        </div>
+    </div>
+
+    <a href="vegindian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Poha": "Calories: 250, Protein: 6g, Fiber: 2g",
+                "Aloo Paratha": "Calories: 300, Protein: 8g, Fiber: 4g",
+                "Upma": "Calories: 180, Protein: 5g, Fiber: 3g",
+                "Idli": "Calories: 40 per idli, Protein: 2g, Low in Fat",
+                "Dosa": "Calories: 130 per dosa, Protein: 3g, Carbs: 20g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page Test</title>
+    <style>
+        body {
+            background-image: url('assets/foodbg.jpeg');
+            background-size: cover;       
+            background-position: center;  
+            background-repeat: no-repeat; 
+            height: 100vh;                
+            color: white;             
+            text-align: center;       
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 75px;         
+            margin-top: 20px;         
+            margin-bottom: 10px;      
+        }
+
+        .btn-info {
+            font-size: 1.2rem;        
+            padding: 10px 20px;       
+        }
+
+        .navbar-container {
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            max-width: 400px;
+        }
+
+        .navbar {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .navbar-toggler {
+            font-size: 25px;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;         
+        }
+
+        .nav-link, .dropdown-item {
+            font-size: 25px;
+        }
+
+        .back-btn {
+            position: absolute;
+            bottom: 20px;    
+            right: 20px;     
+        }
+
+        .home-link {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 25px;
+            color: blue;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+            outline: none;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            font-size: 18px;
+            padding: 5px 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .search-bar button {
+            margin-left: 5px;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: rgb(206, 144, 45);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: rgb(175, 122, 38);
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchQuery" placeholder="Search (e.g., Chinese lunch)">
+        <button onclick="performSearch()">Go</button>
+    </div>
+
+    <a href="home.html" class="home-link">FOOD RECIPE HOME</a>
+
+    <h1>Non-Vegetarian Recipes</h1>
+
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Cuisine Selector</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select Cuisine
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="nonvegitalian.html">Italian</a></li>
+                                <li><a class="dropdown-item" href="nonvegchinese.html">Chinese</a></li>
+                                <li><a class="dropdown-item" href="nonvegmexican.html">Mexican</a></li>
+                                <li><a class="dropdown-item" href="nonvegindian.html">Indian</a></li>
+                                <li><a class="dropdown-item" href="nonvegthai.html">Thai</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <a href="home.html" class="btn btn-info back-btn">Back</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+
+    <script>
+        function performSearch() {
+            const query = document.getElementById('searchQuery').value.trim().toLowerCase();
+            const mapping = {
+                // Breakfast
+                'chinese breakfast': 'nonvegchinesebreakfast.html',
+                'italian breakfast': 'nonvegitalianbreakfast.html',
+                'mexican breakfast': 'nonvegmexicanbreakfast.html',
+                'indian breakfast': 'nonvegindianbreakfast.html',
+                'thai breakfast': 'nonvegthaibreakfast.html',
+                // Lunch
+                'chinese lunch': 'nonvegchineselunch.html',
+                'italian lunch': 'nonvegitalianlunch.html',
+                'mexican lunch': 'nonvegmexicanlunch.html',
+                'indian lunch': 'nonvegindianlunch.html',
+                'thai lunch': 'nonvegthailunch.html',
+                // Dinner
+                'chinese dinner': 'nonvegchinesedinner.html',
+                'italian dinner': 'nonvegitaliandinner.html',
+                'mexican dinner': 'nonvegmexicandinner.html',
+                'indian dinner': 'nonvegindiandinner.html',
+                'thai dinner': 'nonvegthaidinner.html',
+                // Snacks
+                'chinese snacks': 'nonvegchinesesnacks.html',
+                'italian snacks': 'nonvegitaliansnacks.html',
+                'mexican snacks': 'nonvegmexicansnacks.html',
+                'indian snacks': 'nonvegindiansnacks.html',
+                'thai snacks': 'nonvegthaisnacks.html',
+                // Dessert
+                'chinese dessert': 'nonvegchinesedessert.html',
+                'italian dessert': 'nonvegitaliandessert.html',
+                'mexican dessert': 'nonvegmexicandessert.html',
+                'indian dessert': 'nonvegindiandessert.html',
+                'thai dessert': 'nonvegthaidessert.html',
+            };
+
+            if (mapping[query]) {
+                window.location.href = mapping[query];
+            } else {
+                alert('No results found for "' + query + '". Please try another search.');
+            }
+        }
+    </script>
+</body>
+</html>

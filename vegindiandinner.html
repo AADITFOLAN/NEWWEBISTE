@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Indian Dinner</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/indianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(79, 176, 0);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(79, 176, 0);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Indian Dinner</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/jeera_rice.jpeg" alt="Jeera Rice">
+            <h3>Jeera Rice</h3>
+            <p>Ingredients: Basmati Rice, Cumin Seeds, Ghee</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Jeera Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=jeera+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A simple yet flavorful rice dish made with basmati rice, cumin seeds, and ghee.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/roti.jpeg" alt="Roti">
+            <h3>Roti</h3>
+            <p>Ingredients: Whole Wheat Flour, Water, Salt</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Roti')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=roti+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Soft, whole wheat flatbreads commonly enjoyed with curries and vegetables.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/baingan_bharta.jpeg" alt="Baingan Bharta">
+            <h3>Baingan Bharta</h3>
+            <p>Ingredients: Eggplant, Tomato, Onion, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Baingan Bharta')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=baingan+bharta+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A smoky, spiced dish of mashed roasted eggplant, tomatoes, onions, and traditional Indian spices.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/malai_kofta.jpeg" alt="Malai Kofta">
+            <h3>Malai Kofta</h3>
+            <p>Ingredients: Paneer, Vegetables, Cream, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Malai Kofta')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=malai+kofta+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A luxurious dish featuring vegetable and paneer dumplings in a creamy tomato-based gravy.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/raita.jpeg" alt="Raita">
+            <h3>Raita</h3>
+            <p>Ingredients: Yogurt, Cucumber, Spices, Herbs</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Raita')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=raita+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A cooling yogurt-based side dish made with cucumbers, spices, and fresh herbs.</div>
+        </div>
+    </div>
+
+    <a href="vegindian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Jeera Rice": "Calories: 200 per serving, Low Fat, Good Source of Carbohydrates",
+                "Roti": "Calories: 70 per piece, High in Fiber, Low Fat",
+                "Baingan Bharta": "Calories: 150 per serving, Low in Calories, High in Antioxidants",
+                "Malai Kofta": "Calories: 300 per serving, Rich in Protein and Fat",
+                "Raita": "Calories: 100 per serving, Cooling and Probiotic"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

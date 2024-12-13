@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Non-Vegetarian Desserts</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Italian Non-Vegetarian Desserts</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/tiramisu.jpeg" alt="Tiramisu">
+            <h3>Tiramisu</h3>
+            <p>Ingredients: Coffee, Ladyfingers, Mascarpone, Cocoa powder</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Tiramisu')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=tiramisu+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/panna_cotta.jpeg" alt="Panna Cotta with Gelatin">
+            <h3>Panna Cotta with Gelatin</h3>
+            <p>Ingredients: Cream, Sugar, Gelatin, Fruit sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Panna Cotta')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=panna+cotta+with+gelatin+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Creamy panna cotta set with gelatin, often topped with fruit sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/zabaglione_marsala.jpeg" alt="Zabaglione with Marsala">
+            <h3>Zabaglione with Marsala</h3>
+            <p>Ingredients: Egg yolks, Sugar, Marsala wine</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Zabaglione')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=zabaglione+with+marsala+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Custard-like dessert made with egg yolks, sugar, and Marsala wine.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/cannoli_ricotta.jpeg" alt="Cannoli with Ricotta">
+            <h3>Cannoli with Ricotta</h3>
+            <p>Ingredients: Pastry shells, Ricotta, Sugar, Chocolate chips</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Cannoli')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=cannoli+with+ricotta+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Crispy pastry shells filled with sweet ricotta cheese filling.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/affogato.jpeg" alt="Affogato">
+            <h3>Affogato</h3>
+            <p>Ingredients: Vanilla gelato, Espresso</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Affogato')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=affogato+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Vanilla gelato "drowned" in a shot of hot espresso.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Tiramisu": "Calories: 300, Protein: 6g, Fat: 15g",
+                "Panna Cotta": "Calories: 250, Protein: 5g, Fat: 12g",
+                "Zabaglione": "Calories: 220, Protein: 4g, Fat: 8g",
+                "Cannoli": "Calories: 330, Protein: 7g, Fat: 20g",
+                "Affogato": "Calories: 180, Protein: 4g, Fat: 10g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Grid container */
+.grid-container {
+  position: absolute;
+  left: 7.25%;
+  top: 18.5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Individual card styling */
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 10px;
+  width: 220px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+  height: 225px;
+  border-radius: 10px;
+}
+
+.ingredients {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.recipe-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.recipe-text {
+  display: none;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(240, 240, 240, 0.9);
+  color: black;
+  border-radius: 8px;
+}
+
+/* Navigation buttons */
+.nav-button {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  padding: 8px 15px;
+}
+
+.home-button {
+  top: 30px;
+  right: 20px;
+}
+
+.back-button {
+  bottom: 20px;
+  right: 20px;
+  background-color: red;
+  color: black;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+

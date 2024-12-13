@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Italian Desserts</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Italian Desserts</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/tiramisu.jpeg" alt="Tiramisu">
+            <h3>Tiramisu</h3>
+            <p>Ingredients: Ladyfingers, Espresso, Mascarpone, Cocoa Powder</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Tiramisu')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=tiramisu+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A beloved Italian dessert, Tiramisu consists of layers of coffee-soaked ladyfingers, rich mascarpone cream, and cocoa powder.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Cannoli.jpg" alt="Cannoli">
+            <h3>Cannoli</h3>
+            <p>Ingredients: Pastry Shells, Ricotta Cheese, Chocolate Chips, Candied Fruits</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Cannoli')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=cannoli+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Cannoli are crispy tubes of pastry filled with a sweet ricotta cheese mixture, often studded with chocolate chips or candied fruit.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Panna Cotta.jpg" alt="Panna Cotta">
+            <h3>Panna Cotta</h3>
+            <p>Ingredients: Cream, Sugar, Vanilla, Gelatin</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Panna Cotta')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=panna+cotta+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Panna Cotta is a velvety Italian dessert made from cream, sugar, and vanilla, often served with a fruit coulis or caramel sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Baba al Rum.jpg" alt="Baba al Rum">
+            <h3>Baba al Rum</h3>
+            <p>Ingredients: Flour, Yeast, Sugar, Rum Syrup</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Baba al Rum')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=baba+al+rum+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Baba al Rum are small yeast cakes soaked in rum syrup, often served as a sweet indulgence after a meal.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Zabaglione.jpg" alt="Zabaglione">
+            <h3>Zabaglione</h3>
+            <p>Ingredients: Egg Yolks, Sugar, Marsala Wine</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Zabaglione')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=zabaglione+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Zabaglione is a silky custard dessert made with egg yolks, sugar, and Marsala wine, often served warm or cold with fruit or cake.</div>
+        </div>
+    </div>
+
+    <a href="vegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Tiramisu": "Calories: 240 per serving, Rich in Calcium",
+                "Cannoli": "Calories: 300 per serving, High in Protein",
+                "Panna Cotta": "Calories: 200 per serving, Contains Healthy Fats",
+                "Baba al Rum": "Calories: 250 per serving, High in Carbohydrates",
+                "Zabaglione": "Calories: 180 per serving, Rich in Antioxidants"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

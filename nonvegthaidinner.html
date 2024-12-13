@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Thai Dinner</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Thai Dinner</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/thai_green_c.jpeg" alt="Thai Green Curry with Chicken">
+            <h3>Thai Green Curry with Chicken</h3>
+            <p>Ingredients: Chicken, Coconut Milk, Thai Herbs</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Green Curry with Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+green+curry+with+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A rich and creamy Thai green curry made with coconut milk, chicken, and aromatic Thai herbs like basil and lemongrass.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_red_b.jpeg" alt="Thai Red Curry with Beef">
+            <h3>Thai Red Curry with Beef</h3>
+            <p>Ingredients: Beef, Red Curry Paste, Coconut Milk</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Red Curry with Beef')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+red+curry+with+beef+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A spicy and flavorful red curry made with tender beef, a variety of vegetables, and red curry paste simmered in coconut milk.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_basil.jpeg" alt="Thai Basil Chicken">
+            <h3>Thai Basil Chicken</h3>
+            <p>Ingredients: Chicken, Thai Basil, Chilies</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Basil Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+basil+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A stir-fry of juicy chicken pieces with Thai basil, chilies, and soy sauce, creating a spicy and aromatic dish.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_c_satay.jpeg" alt="Thai Chicken Satay">
+            <h3>Thai Chicken Satay</h3>
+            <p>Ingredients: Chicken, Peanut Sauce, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Chicken Satay')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+chicken+satay+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Grilled chicken marinated in a blend of spices and served with a rich, creamy peanut dipping sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_shrimp_pad.jpeg" alt="Thai Shrimp Pad Thai">
+            <h3>Thai Shrimp Pad Thai</h3>
+            <p>Ingredients: Shrimp, Noodles, Peanuts</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Shrimp Pad Thai')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+shrimp+pad+thai+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A popular Thai stir-fried noodle dish with shrimp, peanuts, lime, and a perfect balance of sweet, sour, and salty flavors.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Thai Green Curry with Chicken": "Calories: 450, Protein: 30g, Carbs: 15g",
+                "Thai Red Curry with Beef": "Calories: 500, Protein: 35g, Carbs: 18g",
+                "Thai Basil Chicken": "Calories: 350, Protein: 28g, Carbs: 12g",
+                "Thai Chicken Satay": "Calories: 250, Protein: 20g, Carbs: 8g",
+                "Thai Shrimp Pad Thai": "Calories: 400, Protein: 25g, Carbs: 60g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

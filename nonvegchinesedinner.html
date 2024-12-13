@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Chinese Dinner</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/chinabg.jpeg');
+            color: white;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(255, 47, 0);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(255, 47, 0);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Chinese Dinner</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/General_tso.jpeg" alt="General Tso's Chicken">
+            <h3>General Tso's Chicken</h3>
+            <p>Ingredients: Chicken, Soy Sauce, Rice Vinegar, Chili Peppers, Garlic, Cornstarch</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('General Tso\'s Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=general+tso+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Crispy fried chicken in a tangy and spicy sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/honey_sesame_chicken.jpeg" alt="Honey Sesame Chicken">
+            <h3>Honey Sesame Chicken</h3>
+            <p>Ingredients: Chicken, Honey, Sesame Seeds, Soy Sauce, Cornstarch</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Honey Sesame Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=honey+sesame+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Crispy chicken pieces glazed with honey and sesame seeds.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/crispy_duck_pancakes.jpg" alt="Crispy Duck with Pancakes">
+            <h3>Crispy Duck with Pancakes</h3>
+            <p>Ingredients: Duck, Pancakes, Hoisin Sauce, Scallions, Cucumber</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Crispy Duck with Pancakes')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=crispy+duck+with+pancakes+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Crispy duck served with pancakes, scallions, and hoisin sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/beef_and_pepper.jpeg" alt="Beef and Pepper Stir-Fry">
+            <h3>Beef and Pepper Stir-Fry</h3>
+            <p>Ingredients: Beef, Bell Peppers, Soy Sauce, Garlic, Cornstarch</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Beef and Pepper Stir-Fry')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=beef+and+pepper+stir+fry+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Sautéed beef with bell peppers in a savory sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/lamb_garlic_sauce.jpeg" alt="Lamb with Garlic and Sauce">
+            <h3>Lamb with Garlic and Sauce</h3>
+            <p>Ingredients: Lamb, Garlic, Black Bean Sauce, Soy Sauce, Green Onions</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Lamb with Garlic and Sauce')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=lamb+with+garlic+and+sauce+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Tender lamb cooked with garlic and black beans in a flavorful sauce.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegchinese.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "General Tso's Chicken": "Calories: 300, Fat: 15%",
+                "Honey Sesame Chicken": "Calories: 280, Fat: 12%",
+                "Crispy Duck with Pancakes": "Calories: 400, Fat: 25%",
+                "Beef and Pepper Stir-Fry": "Calories: 250, Fat: 10%",
+                "Lamb with Garlic and Sauce": "Calories: 320, Fat: 18%"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>
+

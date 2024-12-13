@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Thai Snacks</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Thai Snacks</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/spring-rolls-.jpg" alt="Thai Spring Rolls">
+            <h3>Thai Spring Rolls</h3>
+            <p>Ingredients: Rice Paper, Shredded Vegetables, Soy Sauce, Garlic</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Spring Rolls')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+spring+rolls+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Crispy and golden brown spring rolls filled with a delicious mix of shredded vegetables, served with a tangy dipping sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/fried-tofu-.jpg" alt="Thai Fried Tofu">
+            <h3>Thai Fried Tofu</h3>
+            <p>Ingredients: Tofu, Corn Starch, Soy Sauce, Sweet Chili Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Fried Tofu')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+fried+tofu+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Crispy fried tofu cubes served with a flavorful dipping sauce, making a perfect crunchy snack for any time of the day.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/cucumber-salad-.jpg" alt="Thai Cucumber Salad">
+            <h3>Thai Cucumber Salad</h3>
+            <p>Ingredients: Cucumber, Vinegar, Chili, Sugar, Crushed Peanuts</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Cucumber Salad')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+cucumber+salad+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A refreshing Thai-style cucumber salad, tossed in a tangy and spicy dressing, topped with crushed peanuts and fresh herbs.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/steamed-buns-.jpg" alt="Thai Steamed Buns">
+            <h3>Thai Steamed Buns</h3>
+            <p>Ingredients: Flour, Yeast, Vegetables, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Steamed Buns')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+steamed+buns+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Soft, pillowy steamed buns filled with a savory mix of vegetables, perfect as a snack or appetizer.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/grilled-corn-.jpg" alt="Thai Grilled Corn">
+            <h3>Thai Grilled Corn</h3>
+            <p>Ingredients: Corn, Butter, Chili Powder, Lime</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Grilled Corn')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+grilled+corn+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Grilled corn on the cob, brushed with a sweet and spicy Thai glaze, for a smoky, flavorful treat.</div>
+        </div>
+    </div>
+
+    <a href="vegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            const healthFacts = {
+                "Thai Spring Rolls": "Calories: 120 per serving, Low Fat, High in Fiber",
+                "Thai Fried Tofu": "Calories: 150 per serving, Rich in Protein, Gluten-Free",
+                "Thai Cucumber Salad": "Calories: 80 per serving, Low in Calories, Antioxidant-Rich",
+                "Thai Steamed Buns": "Calories: 200 per serving, Low Fat, Vegan-Friendly",
+                "Thai Grilled Corn": "Calories: 110 per serving, High in Fiber, Rich in Vitamin C"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

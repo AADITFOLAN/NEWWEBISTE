@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Mexican Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/mexicanbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Mexican Breakfast</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/Chilaquiles_with_Chicken.jpeg" alt="Chilaquiles with Chicken">
+            <h3>Chilaquiles with Chicken</h3>
+            <p>Ingredients: Corn tortillas, Chicken, Salsa, Cheese</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chilaquiles with Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=Chilaquiles+with+Chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Corn tortillas cut into strips, fried, and served with chicken and red or green sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Eggs Rancheros.jpeg" alt="Eggs Rancheros">
+            <h3>Eggs Rancheros</h3>
+            <p>Ingredients: Eggs, Corn tortillas, Salsa, Toppings</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Eggs Rancheros')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=Eggs+Rancheros+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Fried eggs on corn tortillas with salsa and a variety of toppings.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Breakfast Tacos with Bacon.jpeg" alt="Breakfast Tacos ">
+            <h3>Breakfast Tacos with Bacon</h3>
+            <p>Ingredients: Tortillas, Eggs, Bacon, Cheese</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Breakfast Tacos with Bacon')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=Breakfast+Tacos+with+Bacon+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Soft tortillas filled with scrambled eggs, bacon, and cheese.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Huevos a la Mexicana with Chorizo.jpeg" alt="Huevos a la Mexicana ">
+            <h3>Huevos a la Mexicana with Chorizo</h3>
+            <p>Ingredients: Eggs, Onion, Tomato, Peppers, Chorizo</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Huevos a la Mexicana with Chorizo')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=Huevos+a+la+Mexicana+with+Chorizo+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Scrambled eggs with onions, tomatoes, peppers, and spicy chorizo.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Bacon and Egg Burritos.jpeg" alt="Bacon and Egg Burritos">
+            <h3>Bacon and Egg Burritos</h3>
+            <p>Ingredients: Bacon, Eggs, Cheese, Flour tortilla</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Bacon and Egg Burritos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=Bacon+and+Egg+Burritos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Bacon, eggs, and cheese wrapped in a flour tortilla.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegmexican.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Chilaquiles with Chicken": "Calories: 400, Protein: 30g, Fat: 18g",
+                "Eggs Rancheros": "Calories: 350, Protein: 20g, Fat: 15g",
+                "Breakfast Tacos with Bacon": "Calories: 300, Protein: 20g, Fat: 14g",
+                "Huevos a la Mexicana with Chorizo": "Calories: 320, Protein: 22g, Fat: 16g",
+                "Bacon and Egg Burritos": "Calories: 450, Protein: 25g, Fat: 20g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>
+

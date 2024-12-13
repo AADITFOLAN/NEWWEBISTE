@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Indian Snacks</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/indianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(79, 176, 0);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(79, 176, 0);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Indian Snacks</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/pakora.jpeg" alt="Pakora">
+            <h3>Pakora</h3>
+            <p>Ingredients: Gram Flour, Spinach, Potatoes, Cauliflower, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Pakora')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=pakora+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A savory snack made with gram flour and vegetables like spinach, potatoes, or cauliflower, deep-fried to a crisp.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/samosa.jpeg" alt="Samosa">
+            <h3>Samosa</h3>
+            <p>Ingredients: Potatoes, Peas, Spices, Pastry Dough</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Samosa')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=samosa+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A popular snack consisting of a crispy pastry shell filled with spiced mashed potatoes, peas, and herbs.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/pani puri.jpeg" alt="Pani Puri">
+            <h3>Pani Puri</h3>
+            <p>Ingredients: Puri, Potatoes, Chickpeas, Spicy Water</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Pani Puri')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=pani+puri+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A delicious street food made by stuffing crispy puris with spicy water, potatoes, and chickpeas.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/bhel_puri.jpeg" alt="Bhel Puri">
+            <h3>Bhel Puri</h3>
+            <p>Ingredients: Puffed Rice, Sev, Onions, Tomatoes, Chutneys</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Bhel Puri')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=bhel+puri+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A savory snack made from puffed rice, sev, onions, tomatoes, and sweet and tangy chutneys.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/dhokla.jpeg" alt="Dhokla">
+            <h3>Dhokla</h3>
+            <p>Ingredients: Rice Flour, Chickpea Flour, Yogurt, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Dhokla')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=dhokla+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A steamed, spongy savory cake made with fermented rice and chickpea flour, often served with chutney.</div>
+        </div>
+    </div>
+
+    <a href="vegindian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Pakora": "Calories: 180 per serving, High in Protein from Gram Flour",
+                "Samosa": "Calories: 200 per piece, High in Carbohydrates",
+                "Pani Puri": "Calories: 150 per serving, Low Fat and Carbs",
+                "Bhel Puri": "Calories: 250 per serving, High in Fiber from Puffed Rice",
+                "Dhokla": "Calories: 120 per serving, Rich in Protein from Chickpea Flour"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

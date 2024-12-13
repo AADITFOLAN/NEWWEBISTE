@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Mexican Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/mexicanbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Mexican Breakfast</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/beef_fajitas.jpeg" alt="Beef Fajitas">
+            <h3>Beef Fajitas</h3>
+            <p>Ingredients: Beef, Bell Peppers, Onions, Tortillas, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Beef Fajitas')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=beef+fajitas+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">This recipe combines tender beef with sautéed bell peppers and onions, served in warm tortillas.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/shrimp_tacos.jpeg" alt="Shrimp Tacos">
+            <h3>Shrimp Tacos</h3>
+            <p>Ingredients: Shrimp, Cabbage, Lime, Tortillas, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Shrimp Tacos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=shrimp+tacos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A delightful taco dish featuring seasoned shrimp, fresh cabbage, and lime.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chicken_mole.jpeg" alt="Chicken Mole">
+            <h3>Chicken Mole</h3>
+            <p>Ingredients: Chicken, Mole Sauce, Rice, Sesame Seeds</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Mole')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+mole+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Tender chicken cooked in a rich, chocolate-infused mole sauce served with rice.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/steak_tacos.jpeg" alt="Steak Tacos">
+            <h3>Steak Tacos</h3>
+            <p>Ingredients: Steak, Cilantro, Onions, Tortillas, Lime</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Steak Tacos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=steak+tacos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Juicy steak slices topped with cilantro and onions in a tortilla, garnished with lime.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/pork_al_pastor.jpg" alt="Pork Al Pastor">
+            <h3>Pork Al Pastor</h3>
+            <p>Ingredients: Pork, Pineapple, Chilies, Tortillas</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Pork Al Pastor')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=pork+al+pastor+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Marinated pork with pineapple, cooked to perfection and served in tortillas.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegmexican.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Beef Fajitas": "Calories: 400, Protein: 25g, Fat: 18g",
+                "Shrimp Tacos": "Calories: 300, Protein: 20g, Fat: 10g",
+                "Chicken Mole": "Calories: 450, Protein: 30g, Fat: 20g",
+                "Steak Tacos": "Calories: 350, Protein: 22g, Fat: 15g",
+                "Pork Al Pastor": "Calories: 380, Protein: 24g, Fat: 17g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

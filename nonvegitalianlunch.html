@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Non-Vegetarian Lunch</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Italian Non-Vegetarian Lunch</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/chicken_parmesan.jpeg" alt="Chicken Parmesan">
+            <h3>Chicken Parmesan</h3>
+            <p>Ingredients: Chicken breast, Breadcrumbs, Marinara sauce, Mozzarella, Parmesan</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Parmesan')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+parmesan+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Breaded chicken breast topped with marinara sauce and melted cheese.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/shrimp_scampi.jpeg" alt="Shrimp Scampi">
+            <h3>Shrimp Scampi</h3>
+            <p>Ingredients: Shrimp, Garlic, Butter, Parsley, Pasta</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Shrimp Scampi')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=shrimp+scampi+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Sautéed shrimp in garlic butter sauce served with pasta.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/meatball_sub.jpeg" alt="Meatball Sub">
+            <h3>Meatball Sub</h3>
+            <p>Ingredients: Meatballs, Marinara sauce, Sub roll, Mozzarella</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Meatball Sub')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=meatball+sub+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Italian meatballs in marinara sauce, served on a crusty roll.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/grilled_sausage_peppers.jpeg" alt="Grilled Sausage and Peppers">
+            <h3>Grilled Sausage and Peppers</h3>
+            <p>Ingredients: Italian sausage, Bell peppers, Onions, Olive oil</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Grilled Sausage and Peppers')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=grilled+sausage+and+peppers+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Italian sausage grilled with bell peppers and onions.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/salmon_piccata.jpeg" alt="Salmon Piccata">
+            <h3>Salmon Piccata</h3>
+            <p>Ingredients: Salmon, Lemon, Capers, Butter, Parsley</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Salmon Piccata')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=salmon+piccata+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Pan-seared salmon in a lemon caper sauce.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Chicken Parmesan": "Calories: 500, Protein: 40g, Fat: 20g",
+                "Shrimp Scampi": "Calories: 450, Protein: 30g, Fat: 18g",
+                "Meatball Sub": "Calories: 600, Protein: 35g, Fat: 25g",
+                "Grilled Sausage and Peppers": "Calories: 400, Protein: 20g, Fat: 22g",
+                "Salmon Piccata": "Calories: 350, Protein: 30g, Fat: 15g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

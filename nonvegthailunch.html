@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Thai Lunch</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Thai Lunch</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/thai_massaman_curry.jpeg" alt="Thai Massaman Curry with Chicken">
+            <h3>Thai Massaman Curry with Chicken</h3>
+            <p>Ingredients: Chicken, Potatoes, Peanuts</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Massaman Curry with Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+massaman+curry+with+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A mild and rich curry made with chicken, potatoes, peanuts, and a blend of Thai spices and coconut milk.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_beef_salad.jpeg" alt="Thai Beef Salad">
+            <h3>Thai Beef Salad</h3>
+            <p>Ingredients: Beef, Cucumber, Herbs</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Beef Salad')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+beef+salad+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Tender beef slices are mixed with Thai herbs, cucumber, and a spicy chili-lime dressing.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_pad_chicken.jpeg" alt="Thai Chicken Pad Thai">
+            <h3>Thai Chicken Pad Thai</h3>
+            <p>Ingredients: Chicken, Rice Noodles, Peanuts</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Chicken Pad Thai')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+chicken+pad+thai+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Stir-fried rice noodles with chicken, peanuts, lime, and a delicious sweet and sour sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_green.jpeg" alt="Thai Green Curry with Fish">
+            <h3>Thai Green Curry with Fish</h3>
+            <p>Ingredients: Fish, Green Curry Paste, Basil</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Green Curry with Fish')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+green+curry+with+fish+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A spicy and aromatic green curry with fish, coconut milk, and fresh Thai basil leaves.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_red.jpeg" alt="Thai Red Curry with Duck">
+            <h3>Thai Red Curry with Duck</h3>
+            <p>Ingredients: Duck, Red Curry Paste, Bamboo Shoots</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Red Curry with Duck')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+red+curry+with+duck+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A rich red curry made with tender duck, bamboo shoots, and a blend of Thai spices.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Thai Massaman Curry with Chicken": "Calories: 400, Protein: 30g, Carbs: 35g",
+                "Thai Beef Salad": "Calories: 250, Protein: 30g, Carbs: 8g",
+                "Thai Chicken Pad Thai": "Calories: 500, Protein: 25g, Carbs: 60g",
+                "Thai Green Curry with Fish": "Calories: 350, Protein: 25g, Carbs: 15g",
+                "Thai Red Curry with Duck": "Calories: 600, Protein: 40g, Carbs: 20g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

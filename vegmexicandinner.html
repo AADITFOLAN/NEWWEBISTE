@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Mexican Dinner</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/mexicanbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Mexican Dinner</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/vegetarian-tacos-.jpg" alt="Vegetarian Tacos">
+            <h3>Vegetarian Tacos</h3>
+            <p>Ingredients: Corn Tortillas, Grilled Vegetables, Avocado, Salsa</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetarian Tacos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetarian+tacos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Soft corn tortillas filled with grilled vegetables, avocado, and topped with salsa.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/vegetarian-enchiladas-.jpg" alt="Vegetarian Enchiladas">
+            <h3>Vegetarian Enchiladas</h3>
+            <p>Ingredients: Corn Tortillas, Cheese, Beans, Vegetables, Enchilada Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetarian Enchiladas')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetarian+enchiladas+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Corn tortillas rolled with cheese, beans, and vegetables, smothered in enchilada sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/vegetarian-burritos-.jpg" alt="Vegetarian Burritos">
+            <h3>Vegetarian Burritos</h3>
+            <p>Ingredients: Flour Tortillas, Rice, Beans, Grilled Vegetables, Guacamole</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetarian Burritos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetarian+burritos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Flour tortillas filled with rice, beans, grilled vegetables, and guacamole.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chiles-rellenos-.jpg" alt="Chiles Rellenos">
+            <h3>Chiles Rellenos</h3>
+            <p>Ingredients: Poblano Peppers, Cheese, Egg Batter, Oil</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chiles Rellenos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chiles+rellenos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Roasted poblano peppers stuffed with cheese and coated in a light egg batter, then fried.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/mexican-rice-.jpg" alt="Mexican Rice">
+            <h3>Mexican Rice</h3>
+            <p>Ingredients: Rice, Tomatoes, Onions, Garlic, Chili</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Mexican Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=mexican+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Fluffy rice cooked with tomatoes, onions, garlic, and chili, a perfect side dish.</div>
+        </div>
+    </div>
+
+    <a href="vegmexican.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Vegetarian Tacos": "Calories: 120 per taco, High in Fiber, Low in Fat",
+                "Vegetarian Enchiladas": "Calories: 200 per enchilada, High in Protein, Moderate in Carbs",
+                "Vegetarian Burritos": "Calories: 300 per serving, High in Fiber, Rich in Nutrients",
+                "Chiles Rellenos": "Calories: 250 per serving, Rich in Calcium, High in Fat",
+                "Mexican Rice": "Calories: 150 per serving, Low in Fat, High in Carbs"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Thai Dessert</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Thai Dessert</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/thai_mango_rice.jpeg" alt="Thai Mango Sticky Rice">
+            <h3>Thai Mango Sticky Rice</h3>
+            <p>Ingredients: Mango, Sticky Rice, Coconut Milk</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Mango Sticky Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+mango+sticky+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A traditional Thai dessert made with sticky rice, mango slices, and sweetened coconut milk.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_coconut_icecream.jpeg" alt="Thai Coconut Ice Cream">
+            <h3>Thai Coconut Ice Cream</h3>
+            <p>Ingredients: Coconut Milk, Peanuts, Shredded Coconut</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Coconut Ice Cream')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+coconut+ice+cream+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A creamy coconut ice cream topped with roasted peanuts and shredded coconut for added crunch.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_banana.jpeg" alt="Thai Banana Fritters">
+            <h3>Thai Banana Fritters</h3>
+            <p>Ingredients: Banana, Flour, Honey</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Banana Fritters')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+banana+fritters+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Crispy and golden fried bananas, served with a sweet honey drizzle for extra flavor.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_coconut_pudding.jpeg" alt="Thai Coconut Pudding">
+            <h3>Thai Coconut Pudding</h3>
+            <p>Ingredients: Coconut Milk, Mung Beans, Sugar</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Coconut Pudding')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+coconut+pudding+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A rich coconut pudding topped with a sprinkle of sweetened mung beans for a delightful contrast.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_durian_rice.jpeg" alt="Thai Durian Sticky Rice">
+            <h3>Thai Durian Sticky Rice</h3>
+            <p>Ingredients: Durian, Sticky Rice, Coconut Milk</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Durian Sticky Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+durian+sticky+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A unique dessert featuring durian and sticky rice paired with rich coconut milk.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Thai Mango Sticky Rice": "Calories: 320, Protein: 4g, Carbs: 72g",
+                "Thai Coconut Ice Cream": "Calories: 230, Protein: 3g, Carbs: 24g",
+                "Thai Banana Fritters": "Calories: 180, Protein: 2g, Carbs: 30g",
+                "Thai Coconut Pudding": "Calories: 150, Protein: 3g, Carbs: 28g",
+                "Thai Durian Sticky Rice": "Calories: 350, Protein: 5g, Carbs: 72g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Indian Desserts</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/indianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(79, 176, 0);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(79, 176, 0);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Indian Desserts</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/gulab_jamun.jpeg" alt="Gulab Jamun">
+            <h3>Gulab Jamun</h3>
+            <p>Ingredients: Milk Solids, Flour, Sugar, Cardamom</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Gulab Jamun')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=gulab+jamun+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Small dough balls made from milk solids, deep-fried, and then soaked in fragrant sugar syrup.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/rasagulla.jpeg" alt="Rasgulla">
+            <h3>Rasgulla</h3>
+            <p>Ingredients: Paneer, Sugar, Rose Water</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Rasgulla')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=rasgulla+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Made from fresh paneer, these round sweets are immersed in a light, aromatic sugar syrup.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/kalakand.jpeg" alt="Kalakand">
+            <h3>Kalakand</h3>
+            <p>Ingredients: Milk, Sugar, Cardamom</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Kalakand')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=kalakand+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A milk-based dessert that is cooked to a fudge-like consistency and flavored with cardamom.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/sooji_ka_halwa.jpeg" alt="Sooji Ka Halwa">
+            <h3>Sooji Ka Halwa</h3>
+            <p>Ingredients: Semolina, Ghee, Sugar, Nuts</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Sooji Ka Halwa')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=sooji+ka+halwa+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A traditional Indian dessert made with roasted semolina, ghee, sugar, and cardamom, often garnished with nuts.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/kheer.jpeg" alt="Kheer">
+            <h3>Kheer</h3>
+            <p>Ingredients: Rice, Milk, Sugar, Cardamom, Nuts</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Kheer')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=kheer+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A popular Indian dessert made by boiling rice in sweetened milk, often flavored with cardamom and garnished with dry fruits.</div>
+        </div>
+    </div>
+
+    <a href="vegindian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Gulab Jamun": "Calories: 150 per piece, High in Sugar and Fat",
+                "Rasgulla": "Calories: 100 per piece, Low Fat, High Protein",
+                "Kalakand": "Calories: 120 per piece, Good Source of Calcium",
+                "Sooji Ka Halwa": "Calories: 250 per serving, High Energy, Moderate Fat",
+                "Kheer": "Calories: 200 per serving, Rich in Calcium and Carbs"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

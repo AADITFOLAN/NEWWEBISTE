@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Mexican Snacks</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/mexicanbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Mexican Snacks</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/vegetarian-nachos-.jpg" alt="Vegetarian Nachos">
+            <h3>Vegetarian Nachos</h3>
+            <p>Ingredients: Tortilla Chips, Cheese, Black Beans, Jalapeños, Guacamole</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetarian Nachos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetarian+nachos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Crispy tortilla chips topped with melted cheese, jalapeños, black beans, and guacamole.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/sopes-.jpg" alt="Mexican Sopes">
+            <h3>Mexican Sopes</h3>
+            <p>Ingredients: Corn Tortillas, Refried Beans, Lettuce, Salsa, Cheese</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Mexican Sopes')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=mexican+sopes+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Thick corn tortillas topped with refried beans, lettuce, salsa, and cheese.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/vegetarian-tacos-.jpg" alt="Vegetarian Tacos">
+            <h3>Vegetarian Tacos</h3>
+            <p>Ingredients: Corn Tortillas, Vegetables, Beans, Cilantro, Lime</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetarian Tacos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetarian+tacos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Soft corn tortillas filled with sautéed vegetables, beans, and topped with cilantro and lime.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/churros-.jpg" alt="Churros">
+            <h3>Churros</h3>
+            <p>Ingredients: Dough, Cinnamon Sugar, Chocolate Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Churros')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=churros+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Fried dough sticks rolled in cinnamon sugar, often served with chocolate dipping sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/corn-fritters-.jpg" alt="Mexican Corn Fritters">
+            <h3>Mexican Corn Fritters</h3>
+            <p>Ingredients: Masa Harina, Fresh Corn, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Mexican Corn Fritters')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=mexican+corn+fritters+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Golden fried corn fritters made with masa harina, fresh corn, and spices.</div>
+        </div>
+    </div>
+
+    <a href="vegmexican.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Vegetarian Nachos": "Calories: 300 per serving, Rich in Fiber, Moderate in Protein",
+                "Mexican Sopes": "Calories: 250 per serving, High in Fiber, Low in Fat",
+                "Vegetarian Tacos": "Calories: 200 per taco, Rich in Vitamins A & C, High in Fiber",
+                "Churros": "Calories: 180 per piece, High in Carbs, Moderate in Sugar",
+                "Mexican Corn Fritters": "Calories: 220 per serving, High in Protein, Rich in Iron"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

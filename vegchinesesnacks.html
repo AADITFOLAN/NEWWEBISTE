@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Vegetarian Snacks</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/chinabg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(255, 47, 0);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(255, 47, 0);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chinese Vegetarian Snacks</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/samosa.jpeg" alt="Vegetable Samosas">
+            <h3>Vegetable Samosas</h3>
+            <p>Ingredients: Potatoes, Peas, Flour, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetable Samosas')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetable+samosas+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Crispy and delicious, these samosas are filled with a mixture of spiced vegetables and deep-fried to perfection.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/pakora.jpeg" alt="Vegetable Pakoras">
+            <h3>Vegetable Pakoras</h3>
+            <p>Ingredients: Chickpea Flour, Mixed Vegetables, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetable Pakoras')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetable+pakoras+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">These crispy fritters are made from chickpea flour and mixed vegetables, served hot with a side of chutney.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/veg_springrolls.jpeg" alt="Spring Rolls">
+            <h3>Spring Rolls</h3>
+            <p>Ingredients: Spring Roll Wrappers, Cabbage, Carrots</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Spring Rolls')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetable+spring+rolls+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Crispy spring rolls filled with seasoned vegetables, served with sweet chili sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/veg_wonton.jpeg" alt="Vegetable Wontons">
+            <h3>Vegetable Wontons</h3>
+            <p>Ingredients: Wonton Wrappers, Cabbage, Carrots, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetable Wontons')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetable+wontons+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Steamed dumplings filled with seasoned vegetables, perfect with a side of soy sauce or dipping sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chinese_chat.jpeg" alt="Chinese Chaat">
+            <h3>Chinese Chaat</h3>
+            <p>Ingredients: Fried Noodles, Vegetables, Tangy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chinese Chaat')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chinese+chaat+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Crispy fried noodles served with vegetables and a tangy, spicy sauce, perfect as a quick snack.</div>
+        </div>
+    </div>
+
+    <a href="vegchinese.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Vegetable Samosas": "Calories: 150, Protein: 4g, Carbs: 20g",
+                "Vegetable Pakoras": "Calories: 120, Protein: 3g, Carbs: 15g",
+                "Spring Rolls": "Calories: 100, Protein: 2g, Carbs: 10g",
+                "Vegetable Wontons": "Calories: 80, Protein: 2g, Carbs: 12g",
+                "Chinese Chaat": "Calories: 140, Protein: 3g, Carbs: 18g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Italian Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Italian Breakfast</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/Cappuccino.jpg" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <p>Ingredients: Espresso, Milk, Cocoa Powder</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Cappuccino')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=cappuccino+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A classic Italian breakfast drink made with rich espresso and creamy frothed milk, topped with a dusting of cocoa powder.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Crostata.jpg" alt="Crostata">
+            <h3>Crostata</h3>
+            <p>Ingredients: Butter, Flour, Sugar, Fruit Preserves</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Crostata')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=crostata+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A rustic Italian tart made from a buttery crust filled with fruit preserves, such as apricot or raspberry.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Panettone.jpg" alt="Panettone">
+            <h3>Panettone</h3>
+            <p>Ingredients: Flour, Sugar, Butter, Eggs, Dried Fruits, Citrus Zest</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Panettone')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=panettone+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A sweet, fluffy Italian bread loaded with dried fruits and citrus zest, perfect for breakfast or as a snack.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Frittata.jpg" alt="Frittata">
+            <h3>Frittata</h3>
+            <p>Ingredients: Eggs, Vegetables, Cheese, Herbs</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Frittata')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=frittata+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A versatile Italian omelette filled with seasonal vegetables, cheese, and herbs, often served for breakfast or brunch.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Bruschetta.jpg" alt="Bruschetta">
+            <h3>Bruschetta</h3>
+            <p>Ingredients: Bread, Tomatoes, Basil, Olive Oil</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Bruschetta')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=bruschetta+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A simple and delicious appetizer made with toasted bread, fresh tomatoes, basil, and a drizzle of olive oil.</div>
+        </div>
+    </div>
+
+    <a href="vegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Cappuccino": "Calories: 80 per cup, Rich in Antioxidants",
+                "Crostata": "Calories: 200 per slice, High in Carbohydrates",
+                "Panettone": "Calories: 260 per slice, High in Sugar and Energy",
+                "Frittata": "Calories: 150 per serving, High in Protein",
+                "Bruschetta": "Calories: 120 per serving, Rich in Healthy Fats"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

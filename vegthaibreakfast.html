@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Thai Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Thai Breakfast</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/pineapple-fried-rice.jpg" alt="Thai Pineapple Fried Rice">
+            <h3>Thai Pineapple Fried Rice</h3>
+            <p>Ingredients: Pineapple, Rice, Cashews, Mixed Vegetables, Soy Sauce, Curry Powder</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Pineapple Fried Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+pineapple+fried+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A delicious stir-fried rice dish made with pineapple, mixed vegetables, and cashews, seasoned with soy sauce and curry powder.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/tofu-scramble.jpg" alt="Thai Tofu Scramble">
+            <h3>Thai Tofu Scramble</h3>
+            <p>Ingredients: Tofu, Turmeric, Thai Spices, Vegetables</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Tofu Scramble')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+tofu+scramble+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A hearty vegan alternative to scrambled eggs, using tofu, turmeric, and Thai spices to create a flavorful and protein-rich breakfast.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/rice-noodles.jpg" alt="Thai Rice Noodles">
+            <h3>Thai Rice Noodles</h3>
+            <p>Ingredients: Rice Noodles, Tamarind Sauce, Vegetables, Cilantro, Mint</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Rice Noodles')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+rice+noodles+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Rice noodles stir-fried with a tangy tamarind sauce, along with sautéed vegetables and herbs like cilantro and mint for a fresh flavor.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/coconut-pancakes.jpg" alt="Thai Coconut Pancakes">
+            <h3>Thai Coconut Pancakes</h3>
+            <p>Ingredients: Coconut Milk, Flour, Sugar, Fruit, Coconut Syrup</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Coconut Pancakes')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+coconut+pancakes+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Delicate pancakes made with coconut milk, topped with fresh fruit and served with a drizzle of honey or coconut syrup.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/fruit-salad.jpg" alt="Thai Fruit Salad">
+            <h3>Thai Fruit Salad</h3>
+            <p>Ingredients: Mango, Papaya, Pineapple, Sweet and Sour Thai Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Fruit Salad')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+fruit+salad+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A refreshing fruit salad made with tropical fruits like mango, papaya, and pineapple, dressed with a sweet and sour Thai sauce.</div>
+        </div>
+    </div>
+
+    <a href="vegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            const healthFacts = {
+                "Thai Pineapple Fried Rice": "Calories: 250 per serving, Low in Fat, High in Fiber",
+                "Thai Tofu Scramble": "Calories: 150 per serving, High in Protein, Rich in Calcium",
+                "Thai Rice Noodles": "Calories: 200 per serving, Gluten-Free, Low in Fat",
+                "Thai Coconut Pancakes": "Calories: 180 per pancake, High in Healthy Fats, Rich in Fiber",
+                "Thai Fruit Salad": "Calories: 120 per serving, Rich in Vitamin C, High in Antioxidants"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

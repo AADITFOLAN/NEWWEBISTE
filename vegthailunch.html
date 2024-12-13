@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Thai Lunch</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Thai Lunch</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/pad-see-ew.jpg" alt="Thai Pad See Ew">
+            <h3>Thai Pad See Ew</h3>
+            <p>Ingredients: Wide Rice Noodles, Broccoli, Carrots, Soy Sauce, Garlic</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Pad See Ew')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+pad+see+ew+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A flavorful Thai stir-fry made with wide rice noodles, mixed vegetables, and a savory soy-based sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/cashew-stir-fry.jpg" alt="Thai Cashew Stir-Fry">
+            <h3>Thai Cashew Stir-Fry</h3>
+            <p>Ingredients: Tofu, Bell Peppers, Cashews, Onion, Thai Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Cashew Stir-Fry')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+cashew+stir+fry+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A delicious stir-fry with vegetables, tofu or tempeh, and crunchy cashews in a flavorful sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/sweet-chili-tofu.jpg" alt="Thai Sweet Chili Tofu">
+            <h3>Thai Sweet Chili Tofu</h3>
+            <p>Ingredients: Tofu, Sweet Chili Sauce, Rice, Herbs, Chili</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Sweet Chili Tofu')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+sweet+chili+tofu+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Golden crispy tofu cubes tossed in a sweet and tangy chili sauce, garnished with fresh herbs and served with rice.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/veggie-curry.jpg" alt="Thai Veggie Curry">
+            <h3>Thai Veggie Curry</h3>
+            <p>Ingredients: Coconut Milk, Seasonal Vegetables, Thai Curry Paste, Kaffir Lime</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Veggie Curry')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+veggie+curry+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A rich coconut milk-based curry with seasonal vegetables, flavored with Thai curry paste, lemongrass, and kaffir lime leaves.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/green-papaya-salad.jpg" alt="Thai Green Papaya Salad">
+            <h3>Thai Green Papaya Salad</h3>
+            <p>Ingredients: Green Papaya, Lime, Chili, Peanuts, Thai Dressing</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Green Papaya Salad')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+green+papaya+salad+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A tangy and spicy salad made with shredded green papaya, chili, lime, peanuts, and Thai dressing.</div>
+        </div>
+    </div>
+
+    <a href="vegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            const healthFacts = {
+                "Thai Pad See Ew": "Calories: 350 per serving, High in Fiber, Low Fat",
+                "Thai Cashew Stir-Fry": "Calories: 400 per serving, Protein-Rich, Heart-Healthy Fats",
+                "Thai Sweet Chili Tofu": "Calories: 300 per serving, Gluten-Free, Rich in Protein",
+                "Thai Veggie Curry": "Calories: 250 per serving, Dairy-Free, High in Vitamins",
+                "Thai Green Papaya Salad": "Calories: 150 per serving, Low in Calories, Antioxidant-Rich"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

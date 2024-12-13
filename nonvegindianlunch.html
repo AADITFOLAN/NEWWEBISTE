@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Indian Lunch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main_style.css">
+    <style>
+        body {
+            background-image: url('assets/indianbg.jpeg');
+            color: white;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(79, 176, 0);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(79, 176, 0);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Indian Lunch</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/butter_chicken.jpeg" alt="Butter Chicken">
+            <h3>Butter Chicken</h3>
+            <p>Ingredients: Chicken, Butter, Tomatoes, Cream, Spices</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Butter Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=butter+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Tender chicken cooked in a rich and creamy tomato-based gravy.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/lamb_biryani.jpeg" alt="Lamb Biryani">
+            <h3>Lamb Biryani</h3>
+            <p>Ingredients: Lamb, Rice, Yogurt, Saffron, Spices</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Lamb Biryani')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=lamb+biryani+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Spicy and fragrant rice cooked with marinated lamb, saffron, and whole spices.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chicken_tikka.jpeg" alt="Chicken Tikka Masala">
+            <h3>Chicken Tikka Masala</h3>
+            <p>Ingredients: Chicken, Yogurt, Tomatoes, Cream, Spices</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Tikka Masala')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+tikka+masala+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Grilled chicken chunks cooked in a rich, creamy tomato sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/fish_tikka.jpeg" alt="Fish Tikka">
+            <h3>Fish Tikka</h3>
+            <p>Ingredients: Fish, Yogurt, Lemon, Spices</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Fish Tikka')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=fish+tikka+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Fish marinated with spices and grilled to perfection.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/mutton_rogan_josh.jpeg" alt="Mutton Rogan Josh">
+            <h3>Mutton Rogan Josh</h3>
+            <p>Ingredients: Mutton, Yogurt, Spices, Garlic</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Mutton Rogan Josh')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=mutton+rogan+josh+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Tender mutton cooked in a spiced gravy with a rich yogurt-based sauce.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegindian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Butter Chicken": "Calories: 400, Protein: 25g, Fat: 22g",
+                "Lamb Biryani": "Calories: 500, Protein: 30g, Fat: 15g",
+                "Chicken Tikka Masala": "Calories: 350, Protein: 28g, Fat: 18g",
+                "Fish Tikka": "Calories: 280, Protein: 25g, Fat: 10g",
+                "Mutton Rogan Josh": "Calories: 450, Protein: 35g, Fat: 20g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

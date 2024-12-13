@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Thai Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Thai Breakfast</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/chicken_congee.jpeg" alt="Thai Chicken Congee">
+            <h3>Thai Chicken Congee</h3>
+            <p>Ingredients: Chicken, Rice, Ginger, Herbs</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Chicken Congee')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+chicken+congee+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A savory rice porridge with chicken, ginger, and herbs.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_beef_soup.jpeg" alt="Thai Beef Soup">
+            <h3>Thai Beef Soup</h3>
+            <p>Ingredients: Beef, Thai Spices, Broth</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Beef Soup')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+beef+soup+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A broth with tender beef and Thai spices.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_egg_friendrice.jpeg" alt="Thai Egg Fried Rice">
+            <h3>Thai Egg Fried Rice</h3>
+            <p>Ingredients: Eggs, Rice, Vegetables, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Egg Fried Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+egg+fried+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Delicious fried rice with eggs, vegetables, and soy sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_chicken_skewers.jpeg" alt="Thai Chicken Skewers">
+            <h3>Thai Chicken Skewers</h3>
+            <p>Ingredients: Chicken, Thai Marinade, Spicy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Chicken Skewers')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+chicken+skewers+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Marinated chicken skewers served with a spicy sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/thai_shrimp_omelette.jpeg" alt="Thai Shrimp Omelette">
+            <h3>Thai Shrimp Omelette</h3>
+            <p>Ingredients: Shrimp, Eggs, Herbs, Chili</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Shrimp Omelette')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+shrimp+omelette+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A flavorful omelette filled with shrimp, herbs, and chili.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Thai Chicken Congee": "Calories: 250, Protein: 15g, Carbs: 35g",
+                "Thai Beef Soup": "Calories: 200, Protein: 18g, Carbs: 10g",
+                "Thai Egg Fried Rice": "Calories: 300, Protein: 12g, Carbs: 40g",
+                "Thai Chicken Skewers": "Calories: 220, Protein: 20g, Carbs: 5g",
+                "Thai Shrimp Omelette": "Calories: 180, Protein: 20g, Carbs: 2g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

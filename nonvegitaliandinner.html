@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Non-Vegetarian Dinner</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Italian Non-Vegetarian Dinner</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/osso_buco.jpeg" alt="Osso Buco">
+            <h3>Osso Buco</h3>
+            <p>Ingredients: Veal shanks, White wine, Carrots, Celery, Onions</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Osso Buco')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=osso+buco+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Braised veal shanks cooked in white wine and broth with vegetables.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chicken_cacci.jpeg" alt="Chicken Cacciatore">
+            <h3>Chicken Cacciatore</h3>
+            <p>Ingredients: Chicken, Tomatoes, Onions, Peppers, Herbs</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Cacciatore')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+cacciatore+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Chicken stewed with tomatoes, onions, and peppers.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/lobster_ravioli.jpeg" alt="Lobster Ravioli">
+            <h3>Lobster Ravioli</h3>
+            <p>Ingredients: Lobster, Ricotta, Flour, Egg, Tomato sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Lobster Ravioli')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=lobster+ravioli+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Ravioli stuffed with lobster and ricotta in a light tomato sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/stuffed_calamari.jpeg" alt="Stuffed Calamari">
+            <h3>Stuffed Calamari</h3>
+            <p>Ingredients: Calamari, Breadcrumbs, Garlic, Herbs, Tomato sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Stuffed Calamari')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=stuffed+calamari+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Calamari stuffed with breadcrumbs, garlic, and herbs in a tomato sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/beef_lasagna.jpeg" alt="Beef Lasagna">
+            <h3>Beef Lasagna</h3>
+            <p>Ingredients: Ground beef, Lasagna noodles, Ricotta, Marinara sauce, Mozzarella</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Beef Lasagna')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=beef+lasagna+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Layered lasagna with ground beef, ricotta, and marinara sauce.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Osso Buco": "Calories: 500, Protein: 40g, Fat: 20g",
+                "Chicken Cacciatore": "Calories: 350, Protein: 30g, Fat: 15g",
+                "Lobster Ravioli": "Calories: 400, Protein: 20g, Fat: 18g",
+                "Stuffed Calamari": "Calories: 250, Protein: 25g, Fat: 10g",
+                "Beef Lasagna": "Calories: 450, Protein: 28g, Fat: 22g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

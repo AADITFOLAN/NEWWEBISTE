@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Vegetarian Desserts</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/chinabg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(255, 47, 0);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(255, 47, 0);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chinese Vegetarian Desserts</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/sesame_balls.jpeg" alt="Sesame Balls">
+            <h3>Sesame Balls</h3>
+            <p>Ingredients: Red Bean Paste, Sesame Seeds, Dough</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Sesame Balls')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=sesame+balls+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Deep-fried dough balls filled with sweet red bean paste and coated in sesame seeds, creating a perfect crispy and chewy texture.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/coconut_jelly.jpeg" alt="Coconut Jelly">
+            <h3>Coconut Jelly</h3>
+            <p>Ingredients: Coconut Milk, Agar-Agar, Sugar</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Coconut Jelly')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=coconut+jelly+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Coconut jelly made from coconut milk, set to a jelly-like consistency and served cold for a refreshing treat.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/fried_banana.jpeg" alt="Fried Banana Fritters">
+            <h3>Fried Banana Fritters</h3>
+            <p>Ingredients: Bananas, Flour, Sugar</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Fried Banana Fritters')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=fried+banana+fritters+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Bananas coated in a light batter, deep-fried until crispy on the outside and soft on the inside.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/almond_cookies.jpeg" alt="Chinese Almond Cookies">
+            <h3>Chinese Almond Cookies</h3>
+            <p>Ingredients: Almond Flour, Sugar, Butter</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chinese Almond Cookies')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chinese+almond+cookies+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Delicate almond-flavored cookies with a rich taste, light and crispy texture.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/lotus_seed_buns.jpeg" alt="Steamed Lotus Seed Buns">
+            <h3>Steamed Lotus Seed Buns</h3>
+            <p>Ingredients: Lotus Seed Paste, Dough</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Steamed Lotus Seed Buns')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=lotus+seed+buns+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Fluffy steamed buns with a sweet and creamy lotus seed paste filling, a traditional Chinese dessert.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="vegchinese.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Sesame Balls": "Calories: 200, Protein: 3g, Carbs: 30g",
+                "Coconut Jelly": "Calories: 150, Protein: 2g, Carbs: 25g",
+                "Fried Banana Fritters": "Calories: 220, Protein: 1g, Carbs: 40g",
+                "Chinese Almond Cookies": "Calories: 180, Protein: 2g, Carbs: 15g",
+                "Steamed Lotus Seed Buns": "Calories: 190, Protein: 4g, Carbs: 35g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

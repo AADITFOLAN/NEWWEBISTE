@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Italian Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Italian Breakfast</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/frittata_sausage.jpeg" alt="Frittata with Sausage">
+            <h3>Frittata with Sausage</h3>
+            <p>Ingredients: Italian sausage, Bell peppers, Eggs, Cheese</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Frittata with Sausage')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=frittata+with+sausage+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A hearty frittata with Italian sausage, bell peppers, and cheese.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/proscitto_egg_sandwich.jpeg" alt="Prosciutto and Egg Sandwich">
+            <h3>Prosciutto and Egg Sandwich</h3>
+            <p>Ingredients: Prosciutto, Egg, Arugula, Crusty bread</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Prosciutto and Egg Sandwich')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=prosciutto+egg+sandwich+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Warm sandwich with prosciutto, egg, and arugula on crusty bread.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/smoked salmon bagel.jpeg" alt="Smoked Salmon Bagel">
+            <h3>Smoked Salmon Bagel</h3>
+            <p>Ingredients: Bagel, Smoked salmon, Cream cheese, Capers</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Smoked Salmon Bagel')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=smoked+salmon+bagel+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Bagel topped with smoked salmon, cream cheese, and capers.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/italian_breakfast_burrito.jpeg" alt="Italian Breakfast Burrito">
+            <h3>Italian Breakfast Burrito</h3>
+            <p>Ingredients: Scrambled eggs, Italian sausage, Cheese, Tortilla</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Italian Breakfast Burrito')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=italian+breakfast+burrito+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Burrito filled with scrambled eggs, Italian sausage, and cheese.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/bacon_tomato_bruschetta.jpeg" alt="Bacon and Tomato Bruschetta">
+            <h3>Bacon and Tomato Bruschetta</h3>
+            <p>Ingredients: Toasted bread, Crispy bacon, Tomatoes, Basil</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Bacon and Tomato Bruschetta')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=bacon+tomato+bruschetta+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Toasted bread topped with crispy bacon, tomatoes, and basil.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Frittata with Sausage": "Calories: 250, Protein: 18g, Fat: 15g",
+                "Prosciutto and Egg Sandwich": "Calories: 300, Protein: 20g, Fat: 18g",
+                "Smoked Salmon Bagel": "Calories: 320, Protein: 20g, Fat: 15g",
+                "Italian Breakfast Burrito": "Calories: 400, Protein: 22g, Fat: 22g",
+                "Bacon and Tomato Bruschetta": "Calories: 200, Protein: 8g, Fat: 12g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

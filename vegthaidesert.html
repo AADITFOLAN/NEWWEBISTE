@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Thai Desserts</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Thai Desserts</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/mango-sticky-rice-.jpg" alt="Thai Mango Sticky Rice">
+            <h3>Thai Mango Sticky Rice</h3>
+            <p>Ingredients: Sticky Rice, Coconut Milk, Ripe Mango, Sugar, Salt</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Mango Sticky Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+mango+sticky+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A traditional Thai dessert made with sweet sticky rice, coconut milk, and ripe mango slices, served together for a perfect balance of flavors.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/coconut-jelly-.jpg" alt="Thai Coconut Jelly">
+            <h3>Thai Coconut Jelly</h3>
+            <p>Ingredients: Coconut Milk, Agar-Agar, Palm Sugar</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Coconut Jelly')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+coconut+jelly+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A refreshing dessert made with coconut milk, agar-agar, and sweetened with palm sugar, creating a smooth and aromatic jelly treat.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/sweet-potato-balls-.jpg" alt="Thai Sweet Potato Balls">
+            <h3>Thai Sweet Potato Balls</h3>
+            <p>Ingredients: Sweet Potatoes, Coconut Flakes, Pandan Leaves</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Sweet Potato Balls')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+sweet+potato+balls+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Sweet potato balls rolled in coconut flakes, flavored with pandan leaves, creating a chewy and fragrant Thai dessert.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/banana-coconut-cake-.jpg" alt="Thai Banana Coconut Cake">
+            <h3>Thai Banana Coconut Cake</h3>
+            <p>Ingredients: Bananas, Coconut Milk, Flour, Sugar, Vanilla</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Banana Coconut Cake')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+banana+coconut+cake+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A fluffy, moist cake made with ripe bananas, coconut milk, and a hint of vanilla, offering a tropical and sweet flavor.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/tapioca-pudding-.jpg" alt="Thai Tapioca Pudding">
+            <h3>Thai Tapioca Pudding</h3>
+            <p>Ingredients: Tapioca Pearls, Coconut Milk, Palm Sugar, Sesame Seeds</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Tapioca Pudding')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+tapioca+pudding+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A creamy pudding made with tapioca pearls, coconut milk, and palm sugar, often served with a sprinkling of sesame seeds or coconut shavings.</div>
+        </div>
+    </div>
+
+    <a href="vegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            const healthFacts = {
+                "Thai Mango Sticky Rice": "Calories: 300 per serving, High in Natural Sugars, Gluten-Free",
+                "Thai Coconut Jelly": "Calories: 150 per serving, Rich in Healthy Fats, Vegan-Friendly",
+                "Thai Sweet Potato Balls": "Calories: 200 per serving, High in Fiber, Antioxidant-Rich",
+                "Thai Banana Coconut Cake": "Calories: 250 per slice, Rich in Potassium, Dairy-Free",
+                "Thai Tapioca Pudding": "Calories: 220 per serving, Gluten-Free, Energy-Rich"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

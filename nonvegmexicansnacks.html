@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Mexican Breakfast</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/mexicanbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Mexican Breakfast</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/chicken_quesa.jpeg" alt="Chicken Quesadilla">
+            <h3>Chicken Quesadilla</h3>
+            <p>Ingredients: Chicken, Cheese, Tortilla</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Quesadilla')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+quesadilla+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Grilled tortilla with seasoned chicken and melted cheese.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/beef_nachos.jpeg" alt="Beef Nachos">
+            <h3>Beef Nachos</h3>
+            <p>Ingredients: Ground Beef, Tortilla Chips, Cheese, Jalapenos</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Beef Nachos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=beef+nachos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Crispy nachos topped with seasoned beef, cheese, and jalapenos.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/stuffed_beef_jalapenos.jpeg" alt="Stuffed Bacon Jalapenos">
+            <h3>Stuffed Bacon Jalapenos</h3>
+            <p>Ingredients: Jalapenos, Cream Cheese, Bacon</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Stuffed Bacon Jalapenos')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=stuffed+bacon+jalapenos+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Spicy jalapenos stuffed with cream cheese, wrapped in bacon.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chorizo_sliders.jpeg" alt="Chorizo Sliders">
+            <h3>Chorizo Sliders</h3>
+            <p>Ingredients: Chorizo Sausage, Slider Buns, Cheese, Lettuce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chorizo Sliders')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chorizo+sliders+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Mini sliders with spicy chorizo, topped with cheese and lettuce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/grilled_shrimp_skewers.jpeg" alt="Grilled Shrimp Skewers">
+            <h3>Grilled Shrimp Skewers</h3>
+            <p>Ingredients: Shrimp, Garlic, Lemon, Skewers</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Grilled Shrimp Skewers')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=grilled+shrimp+skewers+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Juicy grilled shrimp with garlic and lemon, served on skewers.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegmexican.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Chicken Quesadilla": "Calories: 350, Protein: 22g, Fat: 15g",
+                "Beef Nachos": "Calories: 400, Protein: 20g, Fat: 18g",
+                "Stuffed Bacon Jalapenos": "Calories: 250, Protein: 12g, Fat: 20g",
+                "Chorizo Sliders": "Calories: 300, Protein: 16g, Fat: 14g",
+                "Grilled Shrimp Skewers": "Calories: 150, Protein: 25g, Fat: 5g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

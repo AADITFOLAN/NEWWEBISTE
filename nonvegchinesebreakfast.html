@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Chinese Breakfast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main_style.css">
+    <style>
+        body {
+            background-image: url('assets/chinabg.jpeg');
+            color: white;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(255, 47, 0);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(255, 47, 0);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Chinese Breakfast</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/chicken_congee.jpeg" alt="Chicken Congee">
+            <h3>Chicken Congee</h3>
+            <p>Ingredients: Rice, Chicken, Ginger, Spring Onions, Salt, Pepper</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Congee')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+congee+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A warm rice porridge with chicken and ginger.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/prawn_dumplings.jpeg" alt="Prawn Dumplings">
+            <h3>Prawn Dumplings</h3>
+            <p>Ingredients: Prawns, Chives, Garlic, Ginger, Wonton Wrappers</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Prawn Dumplings')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=prawn+dumplings+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Steamed dumplings filled with prawns and herbs.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/pork_baozi.jpeg" alt="Pork Baozi">
+            <h3>Pork Baozi</h3>
+            <p>Ingredients: Pork, Soy Sauce, Sugar, Garlic, Buns</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Pork Baozi')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=pork+baozi+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Steamed buns stuffed with savory pork filling.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chicken_siu.jpeg" alt="Chicken Siu Mai">
+            <h3>Chicken Siu Mai</h3>
+            <p>Ingredients: Ground Chicken, Mushrooms, Soy Sauce, Wonton Wrappers</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Siu Mai')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+siu+mai+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Steamed dim sum dumplings filled with ground chicken and mushrooms.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/egg_foo_young.jpeg" alt="Egg Foo Young">
+            <h3>Egg Foo Young</h3>
+            <p>Ingredients: Eggs, Vegetables, Shrimp or Pork, Gravy</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Egg Foo Young')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=egg+foo+young+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Fried omelet with vegetables, shrimp, or pork, served with gravy.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegchinese.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Chicken Congee": "Calories: 250, Fat: 10%",
+                "Prawn Dumplings": "Calories: 180, Fat: 6%",
+                "Pork Baozi": "Calories: 300, Fat: 12%",
+                "Chicken Siu Mai": "Calories: 220, Fat: 8%",
+                "Egg Foo Young": "Calories: 260, Fat: 15%"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

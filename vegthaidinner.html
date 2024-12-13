@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Thai Dinner</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/thaibg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Thai Dinner</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/green-curry-.jpg" alt="Thai Green Curry">
+            <h3>Thai Green Curry</h3>
+            <p>Ingredients: Coconut Milk, Green Curry Paste, Zucchini, Eggplant, Bell Peppers</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Green Curry')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+green+curry+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A flavorful Thai curry made with coconut milk, green curry paste, and a mix of vegetables like zucchini, eggplant, and bell peppers.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/pad-thai-.jpg" alt="Thai Pad Thai">
+            <h3>Thai Pad Thai</h3>
+            <p>Ingredients: Rice Noodles, Tofu, Peanuts, Bean Sprouts, Tamarind Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Pad Thai')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+pad+thai+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A classic stir-fried noodle dish made with rice noodles, tofu, peanuts, bean sprouts, and tamarind sauce for a tangy flavor.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/spring-rolls-.jpg" alt="Thai Spring Rolls">
+            <h3>Thai Spring Rolls</h3>
+            <p>Ingredients: Veggies, Herbs, Rice Paper, Spicy Peanut Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Spring Rolls')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+spring+rolls+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Crisp and fresh spring rolls stuffed with veggies, herbs, and served with a side of spicy peanut dipping sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/tom-kha-soup-.jpg" alt="Thai Tom Kha Soup">
+            <h3>Thai Tom Kha Soup</h3>
+            <p>Ingredients: Coconut Milk, Galangal, Lemongrass, Mushrooms, Chili</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Tom Kha Soup')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+tom+kha+soup+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A fragrant and aromatic soup made with coconut milk, galangal, lemongrass, and mushrooms, with a balance of spicy, tangy, and creamy flavors.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/veggie-fried-rice-.jpg" alt="Thai Veggie Fried Rice">
+            <h3>Thai Veggie Fried Rice</h3>
+            <p>Ingredients: Mixed Vegetables, Rice, Soy Sauce, Thai Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Thai Veggie Fried Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=thai+veggie+fried+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A simple yet flavorful fried rice made with mixed vegetables, soy sauce, and a hint of Thai spices, often topped with a fried egg.</div>
+        </div>
+    </div>
+
+    <a href="vegthai.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            const healthFacts = {
+                "Thai Green Curry": "Calories: 250 per serving, High in Fiber, Gluten-Free",
+                "Thai Pad Thai": "Calories: 400 per serving, Protein-Rich, Balanced Carbs",
+                "Thai Spring Rolls": "Calories: 150 per roll, Low in Fat, Vegan-Friendly",
+                "Thai Tom Kha Soup": "Calories: 200 per serving, Immunity-Boosting, Gluten-Free",
+                "Thai Veggie Fried Rice": "Calories: 300 per serving, High in Fiber, Low Cholesterol"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

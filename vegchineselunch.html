@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Vegetarian Lunch</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/chinabg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(255, 47, 0);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(255, 47, 0);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chinese Vegetarian Lunch</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/veg_friedrice.jpg" alt="Vegetable Fried Rice">
+            <h3>Vegetable Fried Rice</h3>
+            <p>Ingredients: Rice, Mixed Vegetables, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetable Fried Rice')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetable+fried+rice+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A quick and easy dish made with stir-fried rice, colorful vegetables, and soy sauce, making it a perfect lunch option.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/tofu_stirfry.jpeg" alt="Tofu Stir Fry">
+            <h3>Tofu Stir Fry</h3>
+            <p>Ingredients: Tofu, Mixed Vegetables, Garlic Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Tofu Stir Fry')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=tofu+stir+fry+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Crispy tofu cubes stir-fried with a mix of vegetables in a savory, flavorful sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chow_mein.jpeg" alt="Chow Mein">
+            <h3>Chow Mein</h3>
+            <p>Ingredients: Noodles, Bell Peppers, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chow Mein')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chow+mein+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Stir-fried noodles with crunchy vegetables and a savory soy sauce that packs a punch.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/sweet_sour_tofu.jpg" alt="Sweet and Sour Tofu">
+            <h3>Sweet and Sour Tofu</h3>
+            <p>Ingredients: Tofu, Pineapple, Sweet and Sour Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Sweet and Sour Tofu')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=sweet+and+sour+tofu+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Sweet and sour tofu cubes served with colorful vegetables and a tangy sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/veg_dumplings.jpeg" alt="Vegetable Dumplings">
+            <h3>Vegetable Dumplings</h3>
+            <p>Ingredients: Dumpling Wrappers, Cabbage, Carrots, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Vegetable Dumplings')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=vegetable+dumplings+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Delicious steamed dumplings filled with vegetables, served with a flavorful dipping sauce.</div>
+        </div>
+    </div>
+
+    <a href="vegchinese.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Vegetable Fried Rice": "Calories: 200, Protein: 6g, Carbs: 40g",
+                "Tofu Stir Fry": "Calories: 250, Protein: 15g, Carbs: 15g",
+                "Chow Mein": "Calories: 300, Protein: 8g, Carbs: 50g",
+                "Sweet and Sour Tofu": "Calories: 220, Protein: 12g, Carbs: 25g",
+                "Vegetable Dumplings": "Calories: 180, Protein: 8g, Carbs: 30g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

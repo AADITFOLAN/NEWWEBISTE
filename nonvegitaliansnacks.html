@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Non-Vegetarian Snacks</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Italian Non-Vegetarian Snacks</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/mini_meatballs.jpeg" alt="Mini Meatballs">
+            <h3>Mini Meatballs</h3>
+            <p>Ingredients: Ground beef, Breadcrumbs, Parmesan, Marinara sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Mini Meatballs')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=mini+meatballs+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Bite-sized meatballs served with marinara sauce for dipping.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/calamari_rings.jpeg" alt="Calamari Rings">
+            <h3>Calamari Rings</h3>
+            <p>Ingredients: Calamari, Flour, Lemon, Marinara sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Calamari Rings')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=calamari+rings+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Crispy fried calamari rings served with lemon and marinara sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/stuffed_mushrooms.jpeg" alt="Stuffed Mushrooms">
+            <h3>Stuffed Mushrooms</h3>
+            <p>Ingredients: Mushrooms, Sausage, Breadcrumbs, Garlic, Herbs</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Stuffed Mushrooms')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=stuffed+mushrooms+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Mushrooms filled with sausage, breadcrumbs, and herbs.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Prosciutto-Wrapped_Melon.jpeg" alt="Prosciutto-Wrapped Melon">
+            <h3>Prosciutto-Wrapped Melon</h3>
+            <p>Ingredients: Prosciutto, Melon</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Prosciutto-Wrapped Melon')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=prosciutto+wrapped+melon+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Sweet melon wrapped with savory prosciutto.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Arancini.jpeg" alt="Arancini">
+            <h3>Arancini</h3>
+            <p>Ingredients: Rice, Meat, Mozzarella, Breadcrumbs</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Arancini')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=arancini+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Fried rice balls stuffed with meat and cheese.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Mini Meatballs": "Calories: 300, Protein: 25g, Fat: 15g",
+                "Calamari Rings": "Calories: 250, Protein: 20g, Fat: 10g",
+                "Stuffed Mushrooms": "Calories: 200, Protein: 15g, Fat: 8g",
+                "Prosciutto-Wrapped Melon": "Calories: 150, Protein: 10g, Fat: 5g",
+                "Arancini": "Calories: 350, Protein: 15g, Fat: 12g"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

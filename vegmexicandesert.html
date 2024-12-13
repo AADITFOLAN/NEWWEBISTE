@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Mexican Desserts</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/mexicanbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(206, 144, 45);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(206, 144, 45);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Mexican Desserts</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/churros-.jpg" alt="Churros">
+            <h3>Churros</h3>
+            <p>Ingredients: Flour, Butter, Sugar, Cinnamon, Chocolate Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Churros')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=churros+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Churros are fried dough pastries coated with cinnamon and sugar, often served with a chocolate dipping sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/flan-.jpg" alt="Flan">
+            <h3>Flan</h3>
+            <p>Ingredients: Eggs, Milk, Sugar, Vanilla Extract</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Flan')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=flan+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Flan is a creamy caramel custard dessert made from eggs, milk, and sugar.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/arroz-con-leche-.jpg" alt="Arroz con Leche">
+            <h3>Arroz con Leche</h3>
+            <p>Ingredients: Rice, Milk, Sugar, Cinnamon</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Arroz con Leche')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=arroz+con+leche+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Arroz con Leche is a comforting Mexican rice pudding made with rice, milk, sugar, and cinnamon.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/tres-leches-cake-.jpg" alt="Tres Leches Cake">
+            <h3>Tres Leches Cake</h3>
+            <p>Ingredients: Sponge Cake, Evaporated Milk, Condensed Milk, Cream</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Tres Leches Cake')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=tres+leches+cake+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Tres Leches Cake is a soft sponge cake soaked in a mixture of three types of milk: evaporated, condensed, and heavy cream.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/mexican-capirotada-.jpg" alt="Capirotada">
+            <h3>Capirotada</h3>
+            <p>Ingredients: Bread, Raisins, Cinnamon, Syrup</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Capirotada')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=capirotada+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Capirotada is a traditional Mexican bread pudding made with cinnamon, raisins, and syrup.</div>
+        </div>
+    </div>
+
+    <a href="vegmexican.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Churros": "Calories: 150 per serving, High in Carbohydrates, Best in Moderation",
+                "Flan": "Calories: 200 per serving, Good Source of Calcium, Contains Sugar",
+                "Arroz con Leche": "Calories: 180 per serving, High in Carbs, Gluten-Free",
+                "Tres Leches Cake": "Calories: 300 per serving, Rich in Calcium and Protein, High in Sugar",
+                "Capirotada": "Calories: 250 per serving, High in Fiber, Contains Added Sugar"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

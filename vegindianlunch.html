@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Indian Lunch</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/indianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(79, 176, 0);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(79, 176, 0);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Indian Lunch</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/veg_biryani.jpeg" alt="Veg Biryani">
+            <h3>Veg Biryani</h3>
+            <p>Ingredients: Basmati Rice, Mixed Vegetables, Biryani Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Veg Biryani')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=veg+biryani+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A fragrant, spiced rice dish cooked with mixed vegetables, basmati rice, and a blend of biryani spices.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chapati.jpeg" alt="Chapati">
+            <h3>Chapati</h3>
+            <p>Ingredients: Whole Wheat Flour, Water, Salt</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chapati')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chapati+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A soft and fluffy whole wheat flatbread, often served with lentils, vegetables, or curry dishes.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chola_puri.jpeg" alt="Chole Bhature">
+            <h3>Chole Bhature</h3>
+            <p>Ingredients: Chickpeas, Spices, Bhature Dough</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chole Bhature')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chole+bhature+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A popular North Indian dish consisting of spicy chickpea curry served with crispy, fluffy bhature (deep-fried bread).</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/palak_paneer.jpeg" alt="Palak Paneer">
+            <h3>Palak Paneer</h3>
+            <p>Ingredients: Spinach, Paneer, Cream, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Palak Paneer')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=palak+paneer+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Paneer cubes cooked in a creamy, spiced spinach gravy, a popular vegetarian curry in India.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/daal_tadka.jpeg" alt="Daal Tadka">
+            <h3>Daal Tadka</h3>
+            <p>Ingredients: Yellow Lentils, Garlic, Cumin, Spices</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Daal Tadka')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=daal+tadka+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A simple yet flavorful lentil dish made with yellow lentils, tempered with ghee, garlic, cumin, and other spices.</div>
+        </div>
+    </div>
+
+    <a href="vegindian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Veg Biryani": "Calories: 250 per serving, Rich in Carbohydrates and Fiber",
+                "Chapati": "Calories: 70 per piece, High in Fiber, Low Fat",
+                "Chole Bhature": "Calories: 400 per serving, High Protein from Chickpeas",
+                "Palak Paneer": "Calories: 280 per serving, Rich in Iron and Calcium",
+                "Daal Tadka": "Calories: 150 per serving, High in Protein and Fiber"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

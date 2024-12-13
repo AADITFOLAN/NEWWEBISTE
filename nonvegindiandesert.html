@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Indian Dessert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main_style.css">
+    <style>
+        body {
+            background-image: url('assets/indianbg.jpeg');
+            color: white;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(79, 176, 0);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(79, 176, 0);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Indian Dessert</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/kheer_chicken.jpeg" alt="Kheer with Chicken">
+            <h3>Kheer with Chicken</h3>
+            <p>Ingredients: Chicken, Milk, Rice, Cardamom, Saffron</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Kheer with Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=kheer+with+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">A unique dessert made with chicken cooked in a creamy milk base flavored with cardamom and saffron.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/mutton_kheer.jpeg" alt="Mutton Kheer">
+            <h3>Mutton Kheer</h3>
+            <p>Ingredients: Mutton, Rice, Milk, Jaggery, Spices</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Mutton Kheer')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=mutton+kheer+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">A sweet pudding made with mutton, rice, and a rich milk base, sweetened with jaggery.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/chicken_kulfi.jpeg" alt="Chicken Kulfi">
+            <h3>Chicken Kulfi</h3>
+            <p>Ingredients: Chicken, Condensed Milk, Pistachio, Cream</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Chicken Kulfi')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=chicken+kulfi+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">A creamy and rich frozen dessert made with chicken, condensed milk, and pistachio flavor.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/keema_jalebi.jpeg" alt="Keema Jalebi">
+            <h3>Keema Jalebi</h3>
+            <p>Ingredients: Minced Meat, Flour, Syrup, Spices</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Keema Jalebi')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=keema+jalebi+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">A savory twist on the traditional sweet, with spiced minced meat filling inside crispy, syrup-soaked jalebi.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/lamb_jamun.jpeg" alt="Lamb Gulab Jamun">
+            <h3>Lamb Gulab Jamun</h3>
+            <p>Ingredients: Lamb Syrup, Khoya, Flour, Cardamom</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Lamb Gulab Jamun')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=lamb+gulab+jamun+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Traditional gulab jamun with a twist of lamb-infused syrup for a unique flavor.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegindian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Kheer with Chicken": "Calories: 300, Protein: 15g, Fat: 10%",
+                "Mutton Kheer": "Calories: 350, Protein: 18g, Fat: 12%",
+                "Chicken Kulfi": "Calories: 250, Protein: 10g, Fat: 8%",
+                "Keema Jalebi": "Calories: 400, Protein: 20g, Fat: 15%",
+                "Lamb Gulab Jamun": "Calories: 300, Protein: 12g, Fat: 10%"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

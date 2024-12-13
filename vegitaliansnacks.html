@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg Italian Snacks</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/italianbg.jpeg');
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(163, 52, 27);
+            margin: 5px;
+        }
+
+        .home-button, .back-button {
+            background-color: rgb(163, 52, 27);
+            color: whitesmoke;
+        }
+
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Italian Snacks</h1>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/Arancini.jpeg" alt="Arancini">
+            <h3>Arancini</h3>
+            <p>Ingredients: Arborio Rice, Cheese, Breadcrumbs, Marinara Sauce</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe1')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Arancini')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=arancini+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Arancini are golden, crispy rice balls stuffed with cheese, peas, or mushrooms, and served with marinara sauce for dipping.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Crostini.jpg" alt="Crostini">
+            <h3>Crostini</h3>
+            <p>Ingredients: Bread, Tomato, Olive Tapenade, Cheese</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe2')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Crostini')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=crostini+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Crostini are small slices of toasted bread served with toppings like tomato, olive tapenade, or creamy cheese, making for a delicious snack.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Suppli.jpg" alt="Supplì">
+            <h3>Supplì</h3>
+            <p>Ingredients: Arborio Rice, Mozzarella Cheese, Breadcrumbs</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe3')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Supplì')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=suppli+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Supplì are similar to arancini, but with mozzarella cheese in the center. They are deep-fried to golden perfection and often served with marinara sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Bruschetta.jpg" alt="Bruschetta">
+            <h3>Bruschetta</h3>
+            <p>Ingredients: Bread, Tomato, Garlic, Basil, Olive Oil</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe4')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Bruschetta')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=bruschetta+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Bruschetta is a popular Italian snack made with toasted bread topped with fresh tomatoes, garlic, basil, and a drizzle of olive oil.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/Frittata.jpg" alt="Frittata">
+            <h3>Frittata</h3>
+            <p>Ingredients: Eggs, Cheese, Vegetables, Olive Oil</p>
+            <button class="recipe-button" onclick="toggleRecipe('recipe5')">See Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Frittata')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=frittata+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">A frittata is a versatile Italian dish made with eggs, cheese, and vegetables, and can be served warm or at room temperature as a snack.</div>
+        </div>
+    </div>
+
+    <a href="vegitalian.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleRecipe(id) {
+            var recipe = document.getElementById(id);
+            recipe.style.display = recipe.style.display === "none" || recipe.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Arancini": "Calories: 300 per serving, High in Carbs and Protein",
+                "Crostini": "Calories: 120 per serving, Rich in Fiber and Antioxidants",
+                "Supplì": "Calories: 280 per serving, High in Calcium and Protein",
+                "Bruschetta": "Calories: 150 per serving, Low in Fat and High in Vitamins A & C",
+                "Frittata": "Calories: 250 per serving, High in Protein and Healthy Fats"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

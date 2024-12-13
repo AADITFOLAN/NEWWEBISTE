@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Chinese Lunch</title>
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('assets/chinabg.jpeg');
+            color: white;
+        }
+        .recipe-button, .health-button, .video-button {
+            color: white;
+            background-color: rgb(255, 47, 0);
+            margin: 5px;
+        }
+        .home-button, .back-button {
+            background-color: rgb(255, 47, 0);
+            color: whitesmoke;
+        }
+        .recipe-text {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Non-Veg Chinese Lunch</h1>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="dishimages/kung_pao.jpeg" alt="Kung Pao Chicken">
+            <h3>Kung Pao Chicken</h3>
+            <p>Ingredients: Chicken, Peanuts, Vegetables, Spicy Sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe1')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Kung Pao Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=kung+pao+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe1" class="recipe-text">Chicken stir-fried with peanuts, vegetables, and a spicy sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/beef_with_broccoli.jpeg" alt="Beef with Broccoli">
+            <h3>Beef With Broccoli</h3>
+            <p>Ingredients: Beef, Broccoli, Oyster Sauce, Garlic, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe2')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Beef With Broccoli')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=beef+with+broccoli+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe2" class="recipe-text">Sautéed beef and broccoli in a savory oyster sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/sweet_sour_pork.jpeg" alt="Sweet and Sour Pork">
+            <h3>Sweet and Sour Pork</h3>
+            <p>Ingredients: Pork, Pineapple, Bell Peppers, Sweet and Sour Sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe3')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Sweet and Sour Pork')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=sweet+and+sour+pork+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe3" class="recipe-text">Crispy pork pieces in a tangy and sweet sauce with bell peppers and pineapple.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/prawn_chou_main.jpeg" alt="Prawn Chow Mein">
+            <h3>Prawn Chow Mein</h3>
+            <p>Ingredients: Prawns, Noodles, Vegetables, Soy Sauce</p>
+            <button class="recipe-button" onclick="toggleContent('recipe4')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Prawn Chow Mein')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=prawn+chow+mein+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe4" class="recipe-text">Stir-fried noodles with prawns, vegetables, and soy sauce.</div>
+        </div>
+
+        <div class="card">
+            <img src="dishimages/szechuan_chicken.jpeg" alt="Spicy Szechuan Chicken">
+            <h3>Spicy Szechuan Chicken</h3>
+            <p>Ingredients: Chicken, Szechuan Pepper, Garlic, Chili Sauce, Bell Peppers</p>
+            <button class="recipe-button" onclick="toggleContent('recipe5')">View Recipe</button>
+            <button class="health-button" onclick="showHealthFacts('Spicy Szechuan Chicken')">Health Facts</button>
+            <button class="video-button" onclick="window.open('https://www.youtube.com/results?search_query=szechuan+chicken+recipe', '_blank')">Video Tutorial</button>
+            <div id="recipe5" class="recipe-text">Chicken stir-fried in a spicy Szechuan sauce with peppers and garlic.</div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-button home-button">Food Recipe Home</a>
+    <a href="nonvegchinese.html" class="nav-button back-button">Back</a>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
+        }
+
+        function showHealthFacts(dishName) {
+            let healthFacts = {
+                "Kung Pao Chicken": "Calories: 300, Protein: 25g, Fat: 15%",
+                "Beef With Broccoli": "Calories: 250, Protein: 22g, Fat: 10%",
+                "Sweet and Sour Pork": "Calories: 320, Protein: 20g, Fat: 12%",
+                "Prawn Chow Mein": "Calories: 280, Protein: 18g, Fat: 8%",
+                "Spicy Szechuan Chicken": "Calories: 270, Protein: 23g, Fat: 9%"
+            };
+            alert("Health Facts for " + dishName + ": " + healthFacts[dishName]);
+        }
+    </script>
+</body>
+</html>

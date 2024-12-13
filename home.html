@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veg and Non-Veg Buttons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #FFFF00;
+            text-align: center;
+            padding: 1px;
+            margin-bottom: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-image: url('assets/foodbg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #000;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 48px;
+        }
+
+        h2 {
+            color: darkgray;
+            font-size: 60px;
+        }
+
+        .btn-red {
+            background-color: red;
+            color: white;
+            padding: 20px 40px;
+            font-size: 100px;
+        }
+
+        .btn-green {
+            background-color: green;
+            color: white;
+            padding: 20px 40px;
+            font-size: 100px;
+        }
+
+        .btn-about {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .btn-about:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: calc(100vh - 100px);
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+
+  
+
+    <div class="header">
+        <h1 class="text-center">FOOD RECIPIES</h1>
+    </div>
+
+    <div class="content-container">
+        <h2 class="text-center">ARE YOU VEGETARIAN OR NON-VEGETARIAN?</h2>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="veg.html" class="btn btn-green me-3" role="button">Veg</a>
+            <a href="nonveg.html" class="btn btn-red" role="button">Non-Veg</a>
+        </div>
+
+        <!-- About Us Button -->
+        <a href="about.html" class="btn-about">About Us</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
